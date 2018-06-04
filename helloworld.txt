@@ -26,6 +26,21 @@ Now, in your local machine, there will be two versions of all of your branches, 
 
 git push -u origin master
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 We are now left with remote branches. The remote repository that we created in GitHub maintains its own set of branches. In order to stay up do date with them, our local repository maintains a remote version of all the local branches. Go ahead and run the following command in your terminal
 
 git branch --all
@@ -41,3 +56,7 @@ git checkout test_branch > for switching pointer
 There are two important Git commands that you need to understand when it comes to remote branches because you’ll be using them pretty often. They are pull and fetch . We used pull a little while ago, remember? They essentially do the same thing, but there’s a small difference. When you do a fetch, Git updates origin/master (or whatever remote branch you are fetching). But when you do a pull , Git updates origin/master and merges master with it.
 
 git log > for watching the history of commits
+
+git diff commit_id1 commit_id2 >> Comparing two commits found from git log command
+
+green line with + sign is added, red line with - sign is removed whereas black lines are intact
