@@ -27,3 +27,6 @@ Now, in your local machine, there will be two versions of all of your branches, 
 git push -u origin master
 
 git pull origin master
+
+
+But wait, we still need to know what branches are. Right. Basically, you can think of a branch as a parallel universe. Say you want to try out a new feature in your cool mobile app but do not want to mess up the work that’s already been done. In this scenario, you can create a separate branch and do that. If things start going south, you can ditch that entire branch and come back to your original branch like nothing happened. But if you feel that the new feature would be a great addition to the app, you can merge that new branch with the original one. By default, Git names its main branch as master. It can’t do version control without a main branch. So let’s create and delete some branches, shall we
