@@ -10,4 +10,20 @@ git commit > staging index to local repository
 
 #sending files from directory to repository
 
+hence write git add helloworld.txt and check status again
 
+Now the final step for final commit sending to local repository
+
+git commit -m "initial commit"
+
+git remote add origin <url> > just added a remote named origin
+
+This remote is your connection to your remote repository in GitHub. You can add as many remotes as you want.
+
+Now that we have linked up our local repository with our remote one, we’re ready to push our code. But first, we have to add branches. Don’t worry about what branches are for now, we’ll go over them in a little bit. Just know that when you created your GitHub repository, it added a branch called master by default. 
+
+Now, in your local machine, there will be two versions of all of your branches, remote and local. In your local machine, Git created a branch called master by default, so we will have to pull the remote master branch that has been made for us in our remote repository. So go ahead and run the following command
+
+git push -u origin master
+
+git pull origin master
