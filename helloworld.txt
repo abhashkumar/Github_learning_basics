@@ -40,3 +40,4 @@ git checkout test_branch > for switching pointer
 
 There are two important Git commands that you need to understand when it comes to remote branches because you’ll be using them pretty often. They are pull and fetch . We used pull a little while ago, remember? They essentially do the same thing, but there’s a small difference. When you do a fetch, Git updates origin/master (or whatever remote branch you are fetching). But when you do a pull , Git updates origin/master and merges master with it.
 
+git log > for watching the history of commits
