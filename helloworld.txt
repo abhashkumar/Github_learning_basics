@@ -1,0 +1,13 @@
+Go to the folder 
+
+git init > this will make sure the files are going to be tracked see there is a file created with .git
+
+git status > on branch master no commit untracked files
+
+git add > local directory to staging index
+
+git commit > staging index to local repository
+
+#sending files from directory to repository
+
+
