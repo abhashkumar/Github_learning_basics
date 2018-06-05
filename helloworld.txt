@@ -26,26 +26,10 @@ Now, in your local machine, there will be two versions of all of your branches, 
 
 git push -u origin master
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 We are now left with remote branches. The remote repository that we created in GitHub maintains its own set of branches. In order to stay up do date with them, our local repository maintains a remote version of all the local branches. Go ahead and run the following command in your terminal
 
 git branch --all
 git pull origin master
-
 
 But wait, we still need to know what branches are. Right. Basically, you can think of a branch as a parallel universe. Say you want to try out a new feature in your cool mobile app but do not want to mess up the work that’s already been done. In this scenario, you can create a separate branch and do that. If things start going south, you can ditch that entire branch and come back to your original branch like nothing happened. But if you feel that the new feature would be a great addition to the app, you can merge that new branch with the original one. By default, Git names its main branch as master. It can’t do version control without a main branch. So let’s create and delete some branches, shall we
 
@@ -57,6 +41,14 @@ There are two important Git commands that you need to understand when it comes t
 
 git log > for watching the history of commits
 
-git diff commit_id1 commit_id2 >> Comparing two commits found from git log command
+git log --stat > gives statistics which files are changed
+
+git diff commit_id1 commit_id2 >> Comparing two commits found from git log command >> here order of these commit is important >> better user most resent id in between two as second commit id
 
 green line with + sign is added, red line with - sign is removed whereas black lines are intact
+
+git clone <url> >> copying a repository >> other than this earlier we use SCP command
+
+This is true for cloning a repository, but not for copying a directory. The main reason to use git clone rather than copying the directory is because git clone will also copy the commit history of the repository. However, copying can be done on any directory, whereas git clone only works on a Git repository. 
+
+git checkout >> checkout to the previous commits if any issue arises >> better to learn to switch between commits without knowing their commit id's
