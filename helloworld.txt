@@ -52,3 +52,19 @@ git clone <url> >> copying a repository >> other than this earlier we use SCP co
 This is true for cloning a repository, but not for copying a directory. The main reason to use git clone rather than copying the directory is because git clone will also copy the commit history of the repository. However, copying can be done on any directory, whereas git clone only works on a Git repository. 
 
 git checkout >> checkout to the previous commits if any issue arises >> better to learn to switch between commits without knowing their commit id's
+
+git init >> initialize a repository but we don't have any commit yet >> can be varified by running git log >> also by git status
+
+git diff > it doesnt have any parameter and provides the difference between files present at staging area and  workspace area it will help you to detect bug which been introducted to any file that is not in the staging area
+the staging area contains the changes of the most recent commits
+
+So if a file have been changed unintentionally in workspace and differ for staging area so after committing to the intentional change for a different file we run following command setting every thing back to normal
+ 
+git reset --hard
+
+git diff --staged > shows the difference between files in staging area and the most recent commit >> varifying what we are going to commit 
+
+Before commiting any changes also check if you have detach head(commit without label i.e branches) issue buy running :: 
+git status
+if it is so run ::
+git checkout branch_name(or master)
