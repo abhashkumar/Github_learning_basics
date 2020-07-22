@@ -1,74 +1,62 @@
-Go to the folder 
+> 1. Go to the folder 
+> 2. **git init** > this will make sure the files are going to be tracked see there is a file created with .git
+> 3. **git status** > on branch master no commit untracked files
+> 4. **git add** > local directory to staging index
+>    - **git add helloworld.txt** and check status again
+> 5. **git commit** > staging index to local repository
+>    - **git commit -m "initial commit"**
+> 6. **git remote add origin <url>** > just added a remote named origin
 
-git init > this will make sure the files are going to be tracked see there is a file created with .git
-
-git status > on branch master no commit untracked files
-
-git add > local directory to staging index
-
-git commit > staging index to local repository
-
-#sending files from directory to repository
-
-hence write git add helloworld.txt and check status again
-
-Now the final step for final commit sending to local repository
-
-git commit -m "initial commit"
-
-git remote add origin <url> > just added a remote named origin
+------
 
 This remote is your connection to your remote repository in GitHub. You can add as many remotes as you want.
 
-Now that we have linked up our local repository with our remote one, we’re ready to push our code. But first, we have to add branches. Don’t worry about what branches are for now, we’ll go over them in a little bit. Just know that when you created your GitHub repository, it added a branch called master by default. 
+Now that we have linked up our local repository with our remote one, weâ€™re ready to push our code. But first, we have to add branches. Donâ€™t worry about what branches are for now, weâ€™ll go over them in a little bit. Just know that when you created your GitHub repository, it added a branch called master by default. 
 
 Now, in your local machine, there will be two versions of all of your branches, remote and local. In your local machine, Git created a branch called master by default, so we will have to pull the remote master branch that has been made for us in our remote repository. So go ahead and run the following command
 
-git push -u origin master
+> **git push -u origin master**
 
 We are now left with remote branches. The remote repository that we created in GitHub maintains its own set of branches. In order to stay up do date with them, our local repository maintains a remote version of all the local branches. Go ahead and run the following command in your terminal
 
-git branch --all
-git pull origin master
+> **git branch --all**
+>
+> - **git branch**
+>
+> **git pull origin master**
 
-But wait, we still need to know what branches are. Right. Basically, you can think of a branch as a parallel universe. Say you want to try out a new feature in your cool mobile app but do not want to mess up the work that’s already been done. In this scenario, you can create a separate branch and do that. If things start going south, you can ditch that entire branch and come back to your original branch like nothing happened. But if you feel that the new feature would be a great addition to the app, you can merge that new branch with the original one. By default, Git names its main branch as master. It can’t do version control without a main branch. So let’s create and delete some branches, shall we
+But wait, we still need to know what branches are. Right. Basically, you can think of a branch as a parallel universe. Say you want to try out a new feature in your cool mobile app but do not want to mess up the work thatâ€™s already been done. In this scenario, you can create a separate branch and do that. If things start going south, you can ditch that entire branch and come back to your original branch like nothing happened. But if you feel that the new feature would be a great addition to the app, you can merge that new branch with the original one. By default, Git names its main branch as master. It canâ€™t do version control without a main branch. So letâ€™s create and delete some branches, shall we
 
-git branch test_branch > for creating branches 
+> **git branch *test_branch*** > for creating branches here it created a branch named as ***test_branch***
+>
+> **git checkout *test_branch*** > for switching pointer/head
+>
+> **git checkout -b *test_branch*** > both the above commands can be merged  creating and checkout 
 
-git checkout test_branch > for switching pointer
+There are two important Git commands that you need to understand when it comes to remote branches because youâ€™ll be using them pretty often. They are pull and fetch . We used pull a little while ago, remember? They essentially do the same thing, but thereâ€™s a small difference. When you do a fetch, Git updates origin/master (or whatever remote branch you are fetching). But when you do a pull , Git updates origin/master and merges master with it.
 
-both the above commands can be merged and wriiten as on command::
-
-git checkout -b test_branch
-
-There are two important Git commands that you need to understand when it comes to remote branches because you’ll be using them pretty often. They are pull and fetch . We used pull a little while ago, remember? They essentially do the same thing, but there’s a small difference. When you do a fetch, Git updates origin/master (or whatever remote branch you are fetching). But when you do a pull , Git updates origin/master and merges master with it.
-
-git log > for watching the history of commits
-
-git log --stat > gives statistics which files are changed
-
-git diff commit_id1 commit_id2 >> Comparing two commits found from git log command >> here order of these commit is important >> better user most resent id in between two as second commit id
-
-green line with + sign is added, red line with - sign is removed whereas black lines are intact
-
-git clone <url> >> copying a repository >> other than this earlier we use SCP command
+> **git log** > for watching the history of commits
+>
+> **git log --stat** > gives statistics which files are changed
+>
+> **git diff *commit_id1 commit_id2***  > Comparing two commits found from git log command >> here order of these commit is important > better user most resent id in between two as second commit id green line with + sign is added, red line with - sign is removed whereas black lines are intact.
+>
+> - **git diff** > If  any parameter is not provided, it provides the difference between files present at staging area and  workspace area it will help you to detect bug which been introduced to any file that is not in the staging area, the staging area contains the changes of the most recent commit
+> - **git diff --staged** > shows the difference between files in staging area and the most recent commit, verifying what we are going to commit
+>
+> **git clone <url>** > copying a repository >> other than this earlier we use SCP command
 
 This is true for cloning a repository, but not for copying a directory. The main reason to use git clone rather than copying the directory is because git clone will also copy the commit history of the repository. However, copying can be done on any directory, whereas git clone only works on a Git repository. 
 
-git checkout >> checkout to the previous commits if any issue arises >> better to learn to switch between commits without knowing their commit id's
+> **git checkout** > checkout to the previous commits if any issue arises, better to learn to switch between commits without knowing their commit id's
+>
+> **git init** > As came earlier initialize a repository but we don't have any commit yet, can be verified by running below command
+>
+> **git log** > checking all the commit available
+>
+> **git reset --hard** > If a file have been changed unintentionally in workspace and differ for staging area so after committing to the intentional change for a different file we run following command setting every thing back to normal 
 
-git init >> initialize a repository but we don't have any commit yet >> can be varified by running git log >> also by git status
-
-git diff > it doesnt have any parameter and provides the difference between files present at staging area and  workspace area it will help you to detect bug which been introducted to any file that is not in the staging area
-the staging area contains the changes of the most recent commits
-
-So if a file have been changed unintentionally in workspace and differ for staging area so after committing to the intentional change for a different file we run following command setting every thing back to normal
- 
-git reset --hard
-
-git diff --staged > shows the difference between files in staging area and the most recent commit >> varifying what we are going to commit 
-
-Before commiting any changes also check if you have detach head(commit without label i.e branches) issue buy running :: 
+Before committing any changes also check if you have detach head(commit without label i.e branches) issue buy running :: 
 git status
 if it is so run ::
 git checkout branch_name(or master)
@@ -97,14 +85,12 @@ After one commit run git log you will get to know the recent commit hash
 Write git cat-file -p <hash of the new commit>
 you may get the sha of a tree, using this hash we can reach to the content again list of sha's of blob and tree
 
-
 commit point to a tree that is root and then the points to blob or another tree.
 
 A blob is not really a file it is content of a file and the file name and file permission are stored in tree not 
 in blob
 
 git count-objects  >> no. of objects in entire git structure
-
 
 A tag is like a label for the current state of the project.
 There are two types of tags >> regular tags and annotated tags
@@ -118,7 +104,6 @@ Git normally puts branches(nothing but a reference a pointer to a commit actuall
 write > cat .git/refs/heads/master > this file contains a single line one sha1 and this  is sha1 of current commit
 
 in .git there is one file HEAD(reference to a branch pointer to a pointers) > write cat .git/HEAD > ref/head/master that is it is pointing to the current branch which is master branch in our case
-
 
 When you create a new commit, the new commit contains the information about the parent commit and now git see what is inside the HEAD file that is which branch information it is containing currently and it moved that branch to the new commit,head is still pointing at master
 
@@ -134,7 +119,6 @@ Remember references between commits are used to track history whereas all other 
 What is fast-forward merge??
 
 Suppose you merged lisa in master, then you checkout lisa and try to merge master in this case fast forward happens and no more commits occures now lisa will also point to master
-
 
 At the time of detached head commits head itself moves alone not branch, if you dont want to loose those commits create branch at that time stamp after than you can again chyeckout the master again
 
@@ -196,5 +180,5 @@ Imgine a situation when you have to push your changes to the remote but you dont
 you may have to link you git to the original repository from which you forked to keep track of changes in the originl repo these known as upstream.
 You can modify your local repository, pull changes from the upstream, resolve conflicts and push all these in the origin(forked repo).
 You can now send pull request to the maintainers(to pull changes from your forked repo) of upstream.
- 
-=========================================================================================================================================================
+
+==============================================================================================================================================================================
