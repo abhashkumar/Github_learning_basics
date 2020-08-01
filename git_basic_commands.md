@@ -56,14 +56,12 @@ This is true for cloning a repository, but not for copying a directory. The main
 >
 > **git reset --hard** > If a file have been changed unintentionally in workspace and differ for staging area so after committing to the intentional change for a different file we run following command setting every thing back to normal 
 
-Before committing any changes also check if you have detach head(commit without label i.e branches) issue buy running :: 
-git status
-if it is so run ::
-git checkout branch_name(or master)
-
-git log --graph --oneline master coins
-
-=========================================================================
+> Before committing any changes also check if you have detach head(commit without label i.e branches) issue buy running :: 
+> ***git status***
+> if it is so run ::
+> ***git checkout branch_name(or master)***
+>
+> ***git log --graph --oneline master coins***
 
 ls -a >> shows hidden files
 
@@ -95,7 +93,7 @@ git count-objects  >> no. of objects in entire git structure
 A tag is like a label for the current state of the project.
 There are two types of tags >> regular tags and annotated tags
 
-An annotated tag comes witha message >> git tag -a mytag -m "I love cheese cake"
+An annotated tag comes with a message >> git tag -a mytag -m "I love cheese cake"
 
 git tag > to see all tags
 
@@ -107,7 +105,7 @@ in .git there is one file HEAD(reference to a branch pointer to a pointers) > wr
 
 When you create a new commit, the new commit contains the information about the parent commit and now git see what is inside the HEAD file that is which branch information it is containing currently and it moved that branch to the new commit,head is still pointing at master
 
-when you checkout new branch now head will point to the newly checkedout branch can be varified by > 
+when you checkout new branch now head will point to the newly checked out branch can be verified by > 
  cat .git/HEAD, Now our content in the workspace will be changed same as the commit the new branch is pointing
 
 
@@ -118,11 +116,11 @@ Remember references between commits are used to track history whereas all other 
 
 What is fast-forward merge??
 
-Suppose you merged lisa in master, then you checkout lisa and try to merge master in this case fast forward happens and no more commits occures now lisa will also point to master
+Suppose you merged lisa in master, then you checkout lisa and try to merge master in this case fast forward happens and no more commits occurs now lisa will also point to master
 
-At the time of detached head commits head itself moves alone not branch, if you dont want to loose those commits create branch at that time stamp after than you can again chyeckout the master again
+At the time of detached head commits head itself moves alone not branch, if you don't want to loose those commits create branch at that time stamp after than you can again checkout the master again
 
-Now suppose your current branch is spaghetti and you run the command git rebase master then git detaches the complete spaghetti branch from the lowest commman ancestor between master and spaghetti(exclusive) and attches it to master as their parent
+Now suppose your current branch is spaghetti and you run the command git rebase master then git detaches the complete spaghetti branch from the lowest common ancestor between master and spaghetti(exclusive) and attaches it to master as their parent
 
 Tags are one of the types of git database object along with commits,tress and blobs 
 
@@ -143,12 +141,12 @@ One can say tag is like branch but it can't be moved just sticks to the same obj
 
 Run git clone <url>
 
-and cat .git/config > it has the url storeds
+and cat .git/config > it has the URL stored
 
 Each git repository can remember the information about other copies of the same repository each other copies are called remote individually.
 
-you can define as many remote as you want but at the time of cloining a repository git immediately defines a 
-default remote and call it as origin > can be varified inside .git/config file
+you can define as many remote as you want but at the time of cloning a repository git immediately defines a 
+default remote and call it as origin > can be verified inside .git/config file
 
 The default configuration says we have a master branch that maps over the master branch of remote.
 
@@ -157,10 +155,10 @@ To synchronize git also needs to know the current state of origin
 Git tracks a remote branch by just exactly it tracks local branches > check .git/ref/remotes/origin, git will automatically update this information when we connect to a remote 
 
 you may find that in this path(just mentioned above) some of the branches are missing or it may have only heads.
-For the purpose of optimization these informations are stored inside .git/packed-ref file
+For the purpose of optimization these information are stored inside .git/packed-ref file
 To know about these branches to which commit they are pointing at run
 
-git show-ref master  > it will return all the branches that have master in their namewhich the local master branch and remote master branch
+git show-ref master  > it will return all the branches that have master in their name which the local master branch and remote master branch
 
 So the local branch in git is just a reference to a commit whereas remote branch is exactly the same thing. whenever you synchronize with a remote, git updates remote branches.
 
@@ -169,16 +167,16 @@ and run the command git show-ref master we will get local master and remote mast
 
 To make change persistent at the remote run git push > it will push the changes to the remote server and will update remote master commit to the newer commit
 
-Now suppose the scenerio at the time you are going to push your changes into the remote and there is some changes pushed before your push, its kind of conflict
+Now suppose the scenario at the time you are going to push your changes into the remote and there is some changes pushed before your push, its kind of conflict
 To deal with the conflict we should fetch the changes from the remote(results the same state of commits in local and remote), merge(may have to resolve conflicts) and then push
 
 Git fetch followed by merge can be done by single command that is git pull
 
-Dont use git push -f
+Don't use git push -f
 
-Imgine a situation when you have to push your changes to the remote but you dont have the permissio(basically at the time of contribution) than in that case first fork their repository means you will have the copy of their repository in your github account(remote) then clone this forked repository into your local system.
-you may have to link you git to the original repository from which you forked to keep track of changes in the originl repo these known as upstream.
+Imagine a situation when you have to push your changes to the remote but you don't have the permission(basically at the time of contribution) than in that case first fork their repository means you will have the copy of their repository in your GitHub account(remote) then clone this forked repository into your local system.
+you may have to link you git to the original repository from which you forked to keep track of changes in the original repo these known as upstream.
 You can modify your local repository, pull changes from the upstream, resolve conflicts and push all these in the origin(forked repo).
 You can now send pull request to the maintainers(to pull changes from your forked repo) of upstream.
 
-==============================================================================================================================================================================
+========================================================================================================================================================================================================
