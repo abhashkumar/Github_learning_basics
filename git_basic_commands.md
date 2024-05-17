@@ -63,7 +63,7 @@ This is true for cloning a repository, but not for copying a directory. The main
 >
 > ***git log --graph --oneline master coins***
 
-ls -a >> shows hidden files
+> **ls -a** >> shows hidden files
 
 git is map with keys and values
 You give value to git(content of file) it will calculate its hash (sha1)
@@ -129,19 +129,19 @@ Tags are actually labels of the commits.
 
 Creating a light weight tags.
 
-git tag dinner
+> **git tag dinner**
 
-git tag > will show all the tags
+> **git tag** > will show all the tags
 
 Again there is a folder named as tags inside .git/ref that contains all the tags info.
 
-cat .git/ref/tags/dinner > just gives the sha of the commit linked to it
+> **cat .git/ref/tags/dinner** > just gives the sha of the commit linked to it
 
 One can say tag is like branch but it can't be moved just sticks to the same object ever
 
 Run git clone <url>
 
-and cat .git/config > it has the URL stored
+and **cat .git/config** > it has the URL stored
 
 Each git repository can remember the information about other copies of the same repository each other copies are called remote individually.
 
@@ -158,19 +158,19 @@ you may find that in this path(just mentioned above) some of the branches are mi
 For the purpose of optimization these information are stored inside .git/packed-ref file
 To know about these branches to which commit they are pointing at run
 
-git show-ref master  > it will return all the branches that have master in their name which the local master branch and remote master branch
+> **git show-ref master**  > it will return all the branches that have master in their name which the local master branch and remote master branch
 
 So the local branch in git is just a reference to a commit whereas remote branch is exactly the same thing. whenever you synchronize with a remote, git updates remote branches.
 
 Now again if we change the in the local copy of the master branch
 and run the command git show-ref master we will get local master and remote master pointing to the different commit..
 
-To make change persistent at the remote run git push > it will push the changes to the remote server and will update remote master commit to the newer commit
+To make change persistent at the remote run **git push** > it will push the changes to the remote server and will update remote master commit to the newer commit
 
 Now suppose the scenario at the time you are going to push your changes into the remote and there is some changes pushed before your push, its kind of conflict
 To deal with the conflict we should fetch the changes from the remote(results the same state of commits in local and remote), merge(may have to resolve conflicts) and then push
 
-Git fetch followed by merge can be done by single command that is git pull
+Git fetch followed by merge can be done by single command that is **git pull**
 
 Don't use git push -f
 
